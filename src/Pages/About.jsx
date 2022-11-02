@@ -9,7 +9,7 @@ export default function About() {
             <Tag size={"lg"} >Developers</Tag>
             <Box>
                 <Text>Samuel Kojo Kwofie, PhD</Text>
-                <Text>Email: Skwofie2000@gmail.com</Text>
+                <Text>Email: skkwofie@ug.edu.gh</Text>
             </Box>
 
             <Box>
