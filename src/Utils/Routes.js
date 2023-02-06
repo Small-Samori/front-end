@@ -11,6 +11,14 @@ export const AppRoutes = {
     path: '/about',
     title: 'About',
   },
+  tutorial: {
+    path: '/tutorial',
+    title: 'Tutorial',
+  },
+  faq: {
+    path: '/faq',
+    title: 'FAQ',
+  },
 };
 
 export const getTitle = route => {

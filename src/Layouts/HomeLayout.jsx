@@ -1,12 +1,8 @@
 import {
   Flex,
   VStack,
-  Text,
   Heading,
   Image,
-  Box,
-  ListItem,
-  List,
   Button,
   Stack,
   Show,
@@ -16,7 +12,7 @@ import React from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { logo, textLogo } from '../Assets';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
-import { About, HomePages, Predict } from '../Pages';
+import { About, HomePages, Predict, Tutorial } from '../Pages';
 import { AppRoutes, Colors, isSelectedRoute } from '../Utils';
 
 export default function HomeLayout() {
@@ -35,9 +31,19 @@ export default function HomeLayout() {
       title: AppRoutes.predict.title,
     },
     {
+      label: 'Tutorial',
+      path: AppRoutes.tutorial.path,
+      title: AppRoutes.tutorial.title,
+    },
+    {
       label: 'About',
       path: AppRoutes.about.path,
       title: AppRoutes.about.title,
+    },
+    {
+      label: 'FAQ',
+      path: AppRoutes.faq.path,
+      title: AppRoutes.faq.title,
     },
   ];
 
@@ -127,6 +133,8 @@ export default function HomeLayout() {
             <Predict />
             <Divider />
             <About />
+            <Divider />
+            <Tutorial />
           </VStack>
         </Show>
       </Flex>
