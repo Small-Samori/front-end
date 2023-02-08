@@ -18,6 +18,7 @@ import { AppRoutes, Colors, isSelectedRoute } from '../Utils';
 export default function HomeLayout() {
   const loc = useLocation();
   const navigate = useNavigate();
+  const DEFAULT_TITLE = "DengueML: A Random Forest model for dengue drug discovery";
 
   const routes = [
     {
@@ -35,15 +36,15 @@ export default function HomeLayout() {
       path: AppRoutes.tutorial.path,
       title: AppRoutes.tutorial.title,
     },
+        {
+      label: 'FAQ',
+      path: AppRoutes.faq.path,
+      title: AppRoutes.faq.title,
+    },
     {
       label: 'About',
       path: AppRoutes.about.path,
       title: AppRoutes.about.title,
-    },
-    {
-      label: 'FAQ',
-      path: AppRoutes.faq.path,
-      title: AppRoutes.faq.title,
     },
   ];
 
@@ -92,7 +93,7 @@ export default function HomeLayout() {
         </Show>
         <Show above="md">
           <Heading pl="10" flex={1} size={'md'}>
-            {loc.state?.title}
+            {loc.state?.title || DEFAULT_TITLE}
           </Heading>
         </Show>
         <Show above="md">

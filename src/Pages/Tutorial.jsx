@@ -1,6 +1,6 @@
 import { VStack, Text, Box, Image } from '@chakra-ui/react';
 import React from 'react';
-import { Step_1, Step_2 } from '../Assets';
+import { Step_1, Step_2, Step_3 } from '../Assets';
 
 export default function Tutorial() {
   return (
@@ -25,7 +25,7 @@ export default function Tutorial() {
         <Text style={{ display: 'inline', marginLeft: '5px' }}>
           Click the “Submit” button to submit compound the analysis
         </Text>
-        <Image src={Step_2} />
+        <Image src={Step_3} />
       </Box>
     </VStack>
   );
