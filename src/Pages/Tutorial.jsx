@@ -6,9 +6,6 @@ export default function Tutorial() {
   return (
     <VStack minW={'full'} align={'flex-start'} spacing={'10'}>
       <Box>
-        <Text style={{ textDecoration: 'underline' }}>
-          Getting Started with DengueML
-        </Text>
         <Text style={{ fontWeight: 'bolder', display: 'inline' }}>Step 1:</Text>
         <Text style={{ display: 'inline', marginLeft: '5px' }}>
           Navigate to the “Predict” page of the platform

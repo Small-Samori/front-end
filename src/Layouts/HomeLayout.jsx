@@ -12,7 +12,7 @@ import React from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { logo, textLogo } from '../Assets';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
-import { About, HomePages, Predict, Tutorial } from '../Pages';
+import { About, HomePages, Predict, Tutorial, Faq } from '../Pages';
 import { AppRoutes, Colors, isSelectedRoute } from '../Utils';
 
 export default function HomeLayout() {
@@ -36,7 +36,7 @@ export default function HomeLayout() {
       path: AppRoutes.tutorial.path,
       title: AppRoutes.tutorial.title,
     },
-        {
+    {
       label: 'FAQ',
       path: AppRoutes.faq.path,
       title: AppRoutes.faq.title,
@@ -133,9 +133,11 @@ export default function HomeLayout() {
             <Divider />
             <Predict />
             <Divider />
-            <About />
-            <Divider />
             <Tutorial />
+            <Divider />
+            <Faq />
+            <Divider />
+            <About />
           </VStack>
         </Show>
       </Flex>

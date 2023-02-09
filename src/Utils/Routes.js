@@ -13,11 +13,11 @@ export const AppRoutes = {
   },
   tutorial: {
     path: '/tutorial',
-    title: 'Tutorial',
+    title: 'Tutorial: Getting Started with DengueML',
   },
   faq: {
     path: '/faq',
-    title: 'FAQ',
+    title: 'Frequently Asked Questions',
   },
 };
 
