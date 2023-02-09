@@ -62,12 +62,14 @@ export default function Predict() {
     toggleDone(true);
   }
 
-  const changeCompound = (e) => setCompound((_prev) => (e?.target?.value))
+  const changeCompound = (e) => setCompound((_prev) => (e?.target?.value.toLowerCase()))
   const changeFile = (e) => setFile((_prev) => (e.target.files[0]))
 
 
   const handleExampleClick = () => {
-    document.getElementById("compound-input").value = "CCN(CC)CCCC(C)NC1=C2C=CC(=CC2=NC=C1)Cl";
+    document.getElementById("compound-input").value = "CCN(CC)CCCC(C)NC1=C2C=CC(=CC2=NC=C1)CI";
+    setCompound((_prev) => "CCN(CC)CCCC(C)NC1=C2C=CC(=CC2=NC=C1)CI");
+
   }
 
   return (
@@ -79,8 +81,7 @@ export default function Predict() {
             <Text style={{ display: "inline" }}>Compound in SMILES notations</Text>
             <Button w={"50px"} h={"20px"} fontSize={"10px"} bg={Colors.primary} color={'#fff'} marginLeft={"10px"} onClick={handleExampleClick}>Example</Button>
           </Box>
-          <Input onChange={changeCompound} type={"text"} placeholder='CCN(CC)CCCC(C)NC1=C2C=CC(=CC2=NC=C1)Cl
-'  id='compound-input' />
+          <Input onChange={changeCompound} type={"text"} placeholder='CCN(CC)CCCC(C)NC1=C2C=CC(=CC2=NC=C1)CI' id='compound-input' />
           <Button isLoading={isLoading} onClick={handleCompoundSubmit} w={"fit-content"} bg={Colors.primary} color={'#fff'} >Submit</Button>
         </Stack>
         <Show above="md" >
@@ -91,7 +92,6 @@ export default function Predict() {
           <Input type={"file"} onChange={changeFile} />
           <Flex justifyContent={'space-between'}>
             <Button isLoading={isLoading} onClick={handleFileSubmit} w={"fit-content"} bg={Colors.primary} color={'#fff'} >Upload</Button>
-            {/* <Button variant={"ghost"}  rightIcon={<FaDownload/>}>Download Results</Button> */}
           </Flex>
         </Stack>
 
