@@ -32,7 +32,7 @@ export default function Predict() {
       const _formattedData = [];
       _formattedData.push({
         compound: compound,
-        confidence: parseFloat(parseFloat(`${_data?.confidence || 0}`) * 100).toFixed(0),
+        confidence: _data.confidence, //parseFloat(parseFloat(`${_data?.confidence || 0}`) * 100).toFixed(0),
         prediction: parseInt(`${_data?.prediction || 0}`, 10) === 1,
       })
       setFileDataResult((_prev) => (_formattedData))
@@ -51,7 +51,7 @@ export default function Predict() {
       for (let _index = 0; _index < _data?.compound?.length; _index++) {
         _formattedData.push({
           compound: _data?.compound[_index],
-          confidence: parseFloat(parseFloat(`${_data?.confidence[_index] || 0}`) * 100).toFixed(0),
+          confidence: _data?.confidence[_index], //parseFloat(parseFloat(`${_data?.confidence[_index] || 0}`) * 100).toFixed(0),
           prediction: parseInt(`${_data?.prediction[_index] || 0}`, 10) === 1,
         })
       }
@@ -110,7 +110,7 @@ export default function Predict() {
                 <Tag colorScheme={val?.prediction ? "green" : "gray"} >{val?.prediction ? "Active" : "Inactive"}</Tag>
                 <StatHelpText>
                   <StatArrow type={val?.prediction ? "increase" : "decrease"} />
-                  {val?.confidence}% {"  Confidence"}
+                  {val?.confidence} {"  Confidence"}
                 </StatHelpText>
               </Stat>
               )}
