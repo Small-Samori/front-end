@@ -32,7 +32,7 @@ export default function Predict() {
       const _formattedData = [];
       _formattedData.push({
         compound: compound,
-        confidence: _data.confidence, //parseFloat(parseFloat(`${_data?.confidence || 0}`) * 100).toFixed(0),
+        confidence: _data.confidence,
         prediction: parseInt(`${_data?.prediction || 0}`, 10) === 1,
       })
       setFileDataResult((_prev) => (_formattedData))
@@ -51,19 +51,21 @@ export default function Predict() {
       for (let _index = 0; _index < _data?.compound?.length; _index++) {
         _formattedData.push({
           compound: _data?.compound[_index],
-          confidence: _data?.confidence[_index], //parseFloat(parseFloat(`${_data?.confidence[_index] || 0}`) * 100).toFixed(0),
+          confidence: _data?.confidence[_index],
           prediction: parseInt(`${_data?.prediction[_index] || 0}`, 10) === 1,
         })
       }
       setFileDataResult((_prev) => (_formattedData))
-      // setData(_data?.confidence,_data?.prediction);
     }
     toggleLoading(false);
     toggleDone(true);
   }
 
   const changeCompound = (e) => setCompound((_prev) => (e?.target?.value.toLowerCase()))
-  const changeFile = (e) => setFile((_prev) => (e.target.files[0]))
+  const changeFile = (e) => {
+    console.log(e.target.files)
+    setFile((_prev) => (e.target.files[0]));
+  }
 
 
   const handleExampleClick = () => {
@@ -105,7 +107,7 @@ export default function Predict() {
             <Heading>Result</Heading>
             <StatGroup  >
 
-              {fileDataResult?.map((val, index, arr) => <Stat mr={5}>
+              {fileDataResult?.map((val, index, arr)   => <Stat mr={5}>
                 <StatLabel>{val?.compound}</StatLabel>
                 <Tag colorScheme={val?.prediction ? "green" : "gray"} >{val?.prediction ? "Active" : "Inactive"}</Tag>
                 <StatHelpText>

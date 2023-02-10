@@ -26,8 +26,11 @@ const apiService = {
   },
 
   postFile: async data => {
+    const formData = new FormData();
+    formData.append("cpd", data.cpd);
+
     try {
-      const result = await _api.post('/multi', data, {
+      const result = await _api.post('/multi', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
