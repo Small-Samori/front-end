@@ -4,7 +4,7 @@ import { siteMap } from '../Assets'
 
 export default function HomePages() {
   return (
-    <VStack height={'30%'} display={'flex'} justifyContent={"center"} alignItems={"flex-start"} flexDirection={'column'} spacing="5">
+    <VStack height={'40%'} display={'flex'} justifyContent={"center"} alignItems={"flex-start"} flexDirection={'column'} spacing="5">
       <Text>
         DengueML implements a random forest model to predict anti-dengue properties of compounds. It allows the repurposing of compounds and drugs by predicting whether they are active against dengue virus.
       </Text>
