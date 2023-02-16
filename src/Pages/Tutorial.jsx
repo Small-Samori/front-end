@@ -1,6 +1,6 @@
 import { VStack, Text, Box, Image } from '@chakra-ui/react';
 import React from 'react';
-import { Step_1, Step_2, Step_3 } from '../Assets';
+import { Step_1, Step_2, Step_3, Step_4 } from '../Assets';
 
 export default function Tutorial() {
   return (
@@ -23,6 +23,11 @@ export default function Tutorial() {
           Click the “Submit” button to submit compound the analysis
         </Text>
         <Image src={Step_3} />
+
+        <Text style={{ fontWeight: 'bolder', display: 'inline' }}>Step 4:</Text>
+        <Text style={{ display: 'inline', marginLeft: '5px' }}>
+        After a few seconds, the model's prediction will be displayed. In the example below, the model predicted that the queried compound is "Active" with a confidence of 0.93        </Text>
+        <Image src={Step_4} />
       </Box>
     </VStack>
   );

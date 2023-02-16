@@ -52,11 +52,11 @@ export default function Faq() {
             7. Where can I send any other questions or my complaints?
           </Text>
           <Text>
-            Please send complaints on the About Page <Link style={{color: "blue"}} to={"/contact"}>here</Link>
+            Please send complaints on the Contact Page <Link style={{color: "blue"}} to={"/contact"}>here</Link>
           </Text>
           <Text style={{ fontWeight: 'bolder', marginTop: '10px' }}>8. How to cite DengueML?</Text>
           <Text>
-            Please cite as DengueML(www.dengueml.com)
+            Please cite as DengueML (www.dengueml.com)
           </Text>
         </Text>
       </Box>
