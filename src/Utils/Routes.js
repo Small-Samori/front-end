@@ -1,7 +1,7 @@
 export const AppRoutes = {
   home: {
     path: '/',
-    title: `DengueML: A Random Forest model for dengue drug discovery`,
+    title: `DengueML: A Random Forest Model for Predicting Inhibitors of Dengue Virus`,
   },
   predict: {
     path: '/predicts',
@@ -33,7 +33,4 @@ export const getTitle = route => {
 export const isSelectedRoute = (original, route) => {
   if (original?.toLowerCase() === route?.toLowerCase()) return true;
   return false;
-  // if(route?.toLowerCase() === AppRoutes.home.path?.toLowerCase()) {return true;}
-  // if(route?.toLowerCase() === AppRoutes.predict.path?.toLowerCase()) {return true;}
-  // return false;
 };

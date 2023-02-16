@@ -1,6 +1,5 @@
 import { Box, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
-import { siteMap } from '../Assets'
 
 export default function HomePages() {
   return (

@@ -18,7 +18,7 @@ import { AppRoutes, Colors, isSelectedRoute } from '../Utils';
 export default function HomeLayout() {
   const loc = useLocation();
   const navigate = useNavigate();
-  const DEFAULT_TITLE = "DengueML: A Random Forest model for dengue drug discovery";
+  const DEFAULT_TITLE = "DengueML: A Random Forest Model for Predicting Inhibitors of Dengue Virus";
 
   const routes = [
     {
