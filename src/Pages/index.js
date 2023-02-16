@@ -1,6 +1,6 @@
 import HomePages from './HomePages';
-import About from './About';
+import Contact from './Contact';
 import Predict from './Predict';
 import Tutorial from './Tutorial';
 import Faq from './Faq';
-export { HomePages, About, Predict, Tutorial, Faq };
+export { HomePages, Contact, Predict, Tutorial, Faq };

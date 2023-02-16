@@ -11,7 +11,11 @@ const _api = axios.create({
 const apiService = {
   postCompound: async data => {
     try {
-      const result = await _api.post('/compound', data);
+      const result = await _api.post('/compound', data, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       if (result.status === 200 || result.status === 201) {
         return result?.data;
       }

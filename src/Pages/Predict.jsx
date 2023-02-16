@@ -4,7 +4,6 @@ import {
   StatArrow
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
-// import { useEffect } from 'react';
 import { apiService } from '../Services/ApiServices';
 import { Colors } from '../Utils'
 
@@ -61,17 +60,15 @@ export default function Predict() {
     toggleDone(true);
   }
 
-  const changeCompound = (e) => setCompound((_prev) => (e?.target?.value.toLowerCase()))
+  const changeCompound = (e) => setCompound((_prev) => (e?.target?.value))
   const changeFile = (e) => {
-    console.log(e.target.files)
     setFile((_prev) => (e.target.files[0]));
   }
 
 
   const handleExampleClick = () => {
-    document.getElementById("compound-input").value = "CCN(CC)CCCC(C)NC1=C2C=CC(=CC2=NC=C1)CI";
-    setCompound((_prev) => "CCN(CC)CCCC(C)NC1=C2C=CC(=CC2=NC=C1)CI");
-
+    document.getElementById("compound-input").value = "CCN(CC)CCCC(C)NC1=C2C=CC(=CC2=NC=C1)Cl";
+    setCompound((_prev) => "CCN(CC)CCCC(C)NC1=C2C=CC(=CC2=NC=C1)Cl");
   }
 
   return (
@@ -83,7 +80,7 @@ export default function Predict() {
             <Text style={{ display: "inline" }}>Compound in SMILES notations</Text>
             <Button w={"50px"} h={"20px"} fontSize={"10px"} bg={Colors.primary} color={'#fff'} marginLeft={"10px"} onClick={handleExampleClick}>Example</Button>
           </Box>
-          <Input onChange={changeCompound} type={"text"} placeholder='CCN(CC)CCCC(C)NC1=C2C=CC(=CC2=NC=C1)CI' id='compound-input' />
+          <Input onChange={changeCompound} type={"text"} placeholder='CCN(CC)CCCC(C)NC1=C2C=CC(=CC2=NC=C1)Cl' id='compound-input' />
           <Button isLoading={isLoading} onClick={handleCompoundSubmit} w={"fit-content"} bg={Colors.primary} color={'#fff'} >Submit</Button>
         </Stack>
         <Show above="md" >

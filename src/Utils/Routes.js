@@ -7,9 +7,9 @@ export const AppRoutes = {
     path: '/predicts',
     title: 'Random Forest Model for screening anti-dengue compounds',
   },
-  about: {
-    path: '/about',
-    title: 'About',
+  contact: {
+    path: '/contact',
+    title: 'Contact',
   },
   tutorial: {
     path: '/tutorial',
